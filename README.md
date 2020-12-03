@@ -18,6 +18,8 @@ El controlador del endpoint `/sync` espera un token secreto que debe ser enviado
 
 `PORT`: Puerto donde va a correr el servicio, por defecto es 4000
 
+`MONGO_URI`: URI de la base de datos MongoDB, por defecto: `mongodb://127.0.0.1/coviddb`
+
 ## Instalación y ejecución
 1. Clonar este repo.
 2. Instalar dependencias de node: `yarn install` o `npm install`
