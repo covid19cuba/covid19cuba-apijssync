@@ -11,8 +11,11 @@ El controlador del endpoint `/sync` espera un token secreto que debe ser enviado
 ## Variables de entorno que deben ser configuradas
 
 `DATA_URI`: Dirección del json de datos, ej (https://covid19cubadata.github.io/data/covid19-cuba.json)
+
 `STOKEN`: Valor del token secreto, por defecto es `secret`, esto debe ser cambiado para mejor seguridad.
+
 `BOT_URI`: Url del endpoint web que es utilizado por el microservicio del bot para enviar notificaciones. Se utiliza para notificar cuando los datos han sido actualizados. El endpoint en el bot es `/sync`, ej (https://covid19cuba-bot.herokuapp.com/sync)
+
 `PORT`: Puerto donde va a correr el servicio, por defecto es 4000
 
 ## Instalación y ejecución
