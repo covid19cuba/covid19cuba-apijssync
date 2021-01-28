@@ -2,22 +2,13 @@ FROM node:12.17.0-alpine
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
 COPY . .
 
-RUN npm install
-RUN npm run build
+RUN yarn install
+RUN yarn build
 
-FROM node:12.17.0-alpine
+RUN npm install pm2 -g
 
-WORKDIR /usr/src/app
+EXPOSE 4000
 
-COPY package*.json ./
-
-RUN npm install --only=production
-
-COPY --from=0 /usr/src/app/dist ./dist
-
-EXPOSE 3000
-
-CMD npm start
+CMD ["pm2-runtime", "./dist/index.js"]
